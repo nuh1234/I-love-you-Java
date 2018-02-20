@@ -1,0 +1,68 @@
+Hello Dr Z,
+
+My plan is to make a game called 7's that is somewhat similar to 2048 in that it's a math game.
+The goal of the game is to use math operations on random numbers to get to the number 7. If the user gets to 7, the score goes up and the user keeps playing.
+The user should be able to see upcoming numbers and plan ahead.
+
+The user should be able to quit and save their game anytime as well as load a past game. Just like a real game should do. To do this I will use what we learned in class
+about files, lists, classes, and strings. 
+
+Here is my general UML diagram of what I will do, the method names may change a little to matchup better with their eventual functions. 
+I have begun sketching out the plan for this but I think the hardest part will be saving and loading. I will have a full UML included in the file as well
+
+Thank you,
+Nuh
+
+Sevens
+------------
+Sevens extends Application
++score : int
++currentNum : int
++nums : ArrayList<Integer>
++savedGame : File
++loadGame : Load
++scoreLabel : Label
++currentNumberLabel : Label
++nextNumsLabel : Label
+-------------------------------------
++main(args: String[])
++start(primaryStage : Stage)
++operatorPressed(s : String) : void
++setLabels() : void
++loadButtonPressed() : void
++setButtons(s : String, n : double) : Button
+
+//class
+Rand
+
+----------------
+-n : Random
+-nums : ArrayList<Integer>
+------------------
++Rand()
++newRand(): int
++newGame(): ArrayList<Integer> 
++getList(): ArrayList<Integer>
+
+//class
+SaveGame
+--------------------
+-savedGames: File
+---------------------
++SaveGame(fileName: String, savedGames: File)
++saved(score: int, currentNumber: int, currentList: ArrayList<Integer>) : boolean
++getFile(): File
+
+//class
+Load
+---------------
+-fileName: String
+-score: int
+-currentNum: int
+-numbers: ArrayList<Integer>
+-----------------------
++Load(savedGames : File)
++Loaded() : Boolean
++getScore: int
++getCurrentNum: int
++getList: ArrayList<Integer>
